@@ -1,89 +1,63 @@
-**Spotify Clone - README**
+# Spotify Clone - README
 
-Overview
+## Overview
+This project is a Spotify Clone built using **HTML, CSS, and JavaScript**, which dynamically fetches data from **Spotify API**. It allows authenticated users to view their playlists and play music directly from Spotify.
 
-This project is a Spotify Clone built using HTML, CSS, and JavaScript, which dynamically fetches data from Spotify API. It allows authenticated users to view their playlists and play music directly from Spotify.
+## Features
+- **Spotify Authentication:** Users authenticate using their Spotify account.
+- **Fetch Playlists:** Display user playlists dynamically.
+- **Play Music:** Play songs directly from Spotify.
+- **Responsive UI:** Looks good on desktop and mobile.
 
-Features
-
-Spotify Authentication: Users authenticate using their Spotify account.
-
-Fetch Playlists: Display user playlists dynamically.
-
-Play Music: Play songs directly from Spotify.
-
-Responsive UI: Looks good on desktop and mobile.
-
-Prerequisites
-
+## Prerequisites
 Before running the project, ensure you have:
+- A **Spotify Developer Account**
+- A registered **Spotify App** (to get Client ID)
+- **Live Server** (or any HTTP server to run the frontend)
 
-A Spotify Developer Account
+## Setting Up Spotify API
+1. Go to [Spotify Developer Dashboard](https://developer.spotify.com/dashboard/)
+2. Click **Create an App**
+3. Set **Redirect URI** to `http://localhost:5500`
+4. Copy **Client ID** and use it in the `script.js`
 
-A registered Spotify App (to get Client ID)
-
-Live Server (or any HTTP server to run the frontend)
-
-Setting Up Spotify API
-
-Go to Spotify Developer Dashboard
-
-Click Create an App
-
-Set Redirect URI to http://localhost:5500
-
-Copy Client ID and use it in the script.js
-
-Project Structure
-
+## Project Structure
+```
 📂 spotify-clone
  ├── 📜 index.html      # Main page
  ├── 📜 styles.css      # Styling
  ├── 📜 script.js       # Main logic for fetching Spotify data
  ├── 📜 README.md       # This guide
+```
 
-How to Run
+## How to Run
+1. Clone the repository:
+   ```sh
+   git clone https://github.com/yourusername/spotify-clone.git
+   cd spotify-clone
+   ```
+2. Open `index.html` in Live Server or a browser.
 
-Clone the repository:
+## Authentication Flow
+1. **Click Login Button** → Redirects to Spotify Auth Page.
+2. **User Grants Access** → Redirects back with `access_token`.
+3. **Fetch Data** → Playlists & music are loaded dynamically.
 
-git clone https://github.com/yourusername/spotify-clone.git
-cd spotify-clone
+## API Endpoints Used
+- **Authorization:** `https://accounts.spotify.com/authorize`
+- **Get User Playlists:** `https://api.spotify.com/v1/me/playlists`
+- **Play Track:** `https://api.spotify.com/v1/me/player/play`
 
-Open index.html in Live Server or a browser.
+## Future Enhancements
+- Implement Search Functionality
+- Add Volume and Playback Controls
+- Improve UI/UX with animations
 
-Authentication Flow
+## Troubleshooting
+- **Invalid Token?** Ensure your Spotify App's Redirect URI matches.
+- **No Sound?** Make sure a device is active on Spotify.
+- **CORS Issues?** Use a local server instead of `file://`
 
-Click Login Button → Redirects to Spotify Auth Page.
-
-User Grants Access → Redirects back with access_token.
-
-Fetch Data → Playlists & music are loaded dynamically.
-
-API Endpoints Used
-
-Authorization: https://accounts.spotify.com/authorize
-
-Get User Playlists: https://api.spotify.com/v1/me/playlists
-
-Play Track: https://api.spotify.com/v1/me/player/play
-
-Future Enhancements
-
-Implement Search Functionality
-
-Add Volume and Playback Controls
-
-Improve UI/UX with animations
-
-Troubleshooting
-
-Invalid Token? Ensure your Spotify App's Redirect URI matches.
-
-No Sound? Make sure a device is active on Spotify.
-
-CORS Issues? Use a local server instead of file://
-
-License
-
+## License
 MIT License. Feel free to modify and enhance!
 
