@@ -19,28 +19,96 @@ i {
 }
 .title {
   font-family: "Roboto", system-ui;
-  font-weight: 700;
+  font-weight: 400;
   font-style: normal;
+  color: white;
 }
 /* Content CSS */
 .content {
   display: flex;
 }
 /* Header CSS */
+.header {
+  display: flex;
+  justify-content: space-between;
+  padding: 12px;
+}
+.my-music {
+  padding-left: 10px;
+  align-content: center;
+}
 .nav {
+  display: inline-block;
   display: flex;
   justify-content: center;
   align-items: center;
   align-content: center;
-  padding: 10px 0px;
+}
+
+.user {
+  display: flex;
+  cursor: pointer;
+  opacity: 0.8;
+  margin-right: 20px;
+}
+.user-logo {
+  cursor: pointer; /* Để người dùng biết rằng có thể tương tác với phần này */
+  display: flex;
+  align-items: center;
+}
+.user img {
+  background-size: contain;
+  width: 30px; /* Điều chỉnh kích thước */
+  height: 30px;
+  border-radius: 50%;
+  margin-right: 15px;
+}
+.user-logo:hover {
+  transform: scale(1.2);
+  opacity: 1;
+}
+
+.user-display {
+  display: none;
+  position: absolute;
+  background-color: #050300;
+  min-width: 200px;
+  border-radius: 5px;
+  z-index: 10000000000000000000000000000000000000;
+  inset: 0px 0px auto auto;
+  transform: translate(-10px, 64px);
+}
+
+.user-display ul {
+  list-style-type: none;
+}
+
+.user-display li {
+  padding: 10px;
+  color: white;
+  cursor: pointer;
+}
+
+.user-display li:hover {
+  background-color: #444;
+  border-radius: 5px;
+}
+
+.user-display hr {
+  margin: 0;
+  border: 1px solid #333;
+}
+.user:hover .user-display {
+  display: block;
 }
 .home-container {
   position: relative;
 }
 .home-container i {
-  background-color: gray;
+  color: white;
   width: max-content;
   border-radius: 50%;
+  background-color: #121212;
   padding: 12px;
   cursor: pointer;
   opacity: 0.8;
@@ -49,8 +117,7 @@ i {
 .home-container .home-tooltip-text {
   visibility: hidden;
   width: 90px;
-  background-color: gray;
-  color: #fff;
+  color: white;
   text-align: center;
   border-radius: 6px;
   padding: 5px 0px;
@@ -78,9 +145,10 @@ i {
   border-radius: 25px;
   width: 100%;
   padding: 16px 50px;
-  background-color: gray;
+  background-color: #121212;
   border: 1px solid black;
   cursor: pointer;
+  color: white;
   margin-left: 10px;
   opacity: 0.8;
   transition: 0.1s ease-in;
@@ -94,8 +162,8 @@ i {
 .search-btn .search-tooltip-text {
   visibility: hidden;
   width: 100px;
-  background-color: gray;
-  color: #fff;
+  background-color: #121212;
+  color: white;
   text-align: center;
   border-radius: 6px;
   padding: 5px 0px;
@@ -111,6 +179,7 @@ i {
 .search-btn i {
   cursor: pointer;
   padding: 10px;
+  color: white;
 }
 .search-btn:hover .search-tooltip-text {
   visibility: visible;
@@ -120,7 +189,7 @@ i {
 
 .search-container input::placeholder {
   padding-left: 8px;
-  color: #f1f1f1;
+  color: white;
   font-size: 16px;
   font-family: Roboto;
   font-weight: 400; /* Circular Book */
@@ -133,62 +202,39 @@ i {
 }
 
 /* Sidebar Right - Library */
-.library {
-  display: inline-block;
-  background-color: #17202a;
+.sidebar-left {
   width: 22%;
-  border-radius: 10px;
-  padding: 0px 10px;
   margin-left: 0.5%;
-  height: 800px;
-  overflow-y: auto;
+  background-color: #121212;
+  border-radius: 10px;
   height: 80vh;
+  overflow-y: auto;
   transition: all 0.3s ease-in-out;
+  /* padding: 0px 10px; */
 }
-.playlist {
-  cursor: pointer;
-}
-/* Tùy chỉnh thanh cuộn */
-.main::-webkit-scrollbar {
+
+.main::-webkit-scrollbar,
+.sidebar-left::-webkit-scrollbar {
   width: 0;
 }
-.library::-webkit-scrollbar {
-  width: 12px; /* Độ rộng của thanh cuộn dọc */
-  /* Độ cao của thanh cuộn ngang */ /* Hiệu ứng chuyển tiếp cho opacity */
-}
 
-/* Thumb (phần di chuyển) của thanh cuộn */
-.main::-webkit-scrollbar-thumb,
-.library::-webkit-scrollbar-thumb {
-  background-color: rgba(0, 0, 0, 0); /* Màu của thanh cuộn */
-  transition: opacity 0.3s ease-out; /* Thay đổi từ opacity trong thời gian chuyển tiếp */
-}
-
-/* Hiện thanh cuộn khi cuộn */
-.main.scrolling::-webkit-scrollbar-thumb,
-.library.scrolling::-webkit-scrollbar-thumb {
-  /* Hiện thanh cuộn */
-  background-color: rgba(0, 0, 0, 0.5);
-}
-
-/* Ẩn thanh cuộn khi không cuộn */
-.main:not(.scrolling)::-webkit-scrollbar-thumb,
-.library:not(.scrolling)::-webkit-scrollbar-thumb {
-  animation: hide 0.3s forwards; /* Ẩn thanh cuộn */
+.library {
+  padding: 5px 8px;
 }
 .lib-header {
+  padding: 10px 10px;
+  width: 100%;
   position: sticky;
-  top: 0; /* Đặt khoảng cách từ phía trên khi cuộn */
-  z-index: 100; /* Tạo thứ tự lớp để header luôn nằm trên các phần tử khác */
-  padding: 10px; /* Tùy chỉnh khoảng cách padding nếu cần */
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Tạo hiệu ứng đổ bóng để nổi bật hơn */
-  background-color: #17202a;
+  top: 0;
+  z-index: 1;
+  box-shadow: 0 5px 5px rgba(9, 9, 9); /* Tạo hiệu ứng đổ bóng để nổi bật hơn */
+  background-color: #121212;
 }
 .lib-main {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 10px 0px;
+  padding: 10px 10px;
 }
 .icon-text {
   display: inline-flex;
@@ -211,29 +257,38 @@ i {
   padding: 4px 5px;
 }
 .lib-option i:hover {
-  background-color: gray;
+  background-color: #1f1f1f;
 }
 
 .lib-category span {
   display: inline-block;
   white-space: nowrap;
   padding: 8px 14px;
-  background-color: rgba(0, 0, 0, 0.8);
+  background-color: #2a2a2a;
   border-radius: 20px;
   margin: 5px;
-  color: #f1f1f1;
+  color: white;
   transition: opacity 0.3s ease;
   opacity: 0.8;
   cursor: pointer;
 }
 .lib-category span:hover {
-  background-color: rgba(1, 1, 1, 1);
+  background-color: #414141;
+
   transform: scale(1.1);
 }
 .lib-controls {
   display: flex;
+  align-items: center;
   justify-content: space-between;
   margin: 16px 8px;
+}
+.playlist-filter {
+  display: flex;
+  align-items: center;
+}
+.lib-controls .playlist-filter span {
+  margin-right: 5px;
 }
 .lib-controls .playlist-filter,
 .lib-controls .lib-search-btn {
@@ -259,18 +314,20 @@ i {
 .playlist {
   display: flex;
   align-items: center;
-  margin-bottom: 12px;
-  background-color: #fff;
   padding: 8px;
   border-radius: 5px;
+  cursor: pointer;
   /* box-shadow: 0 2px 3px rgba(0, 0, 0, 0.1); */
+}
+.playlist:hover {
+  background-color: rgb(58, 57, 57);
 }
 .playlist .title {
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
-  max-width: 200px; /* Điều chỉnh độ rộng tối đa cho tiêu đề */
-  display: block; /* Đảm bảo tiêu đề là phần tử block */
+  max-width: 200px;
+  display: block;
 }
 
 .playlist.active {
@@ -281,19 +338,18 @@ i {
 /* Middle Content - Main */
 
 .main {
-  width: 55%;
+  width: 80%;
   margin-left: 0.5%;
-  margin-right: 1%;
-  background-color: #17202a;
+  margin-right: 0.5%;
+  background-color: linear-gradient(to bottom, #212f3c, #121212);
   border-radius: 10px;
   height: 80vh;
   overflow-y: auto;
-  position: relative;
 }
 
 .main .playlist-cover {
-  width: 200px;
-  height: 200px;
+  width: 130px;
+  height: 130px;
   border-radius: 5px;
   background-size: contain;
   box-shadow: 10px 10px 15px rgba(0, 0, 0, 0.3);
@@ -301,10 +357,9 @@ i {
 }
 .main .main-playlist {
   display: flex;
-  border-radius: 5px;
-  background-image: linear-gradient(#5d6d7e, #212f3c);
-  padding: 10px;
-  margin: 10px;
+  padding: 50px 15px 10px 13px;
+  align-items: center;
+  background-image: linear-gradient(rgb(199, 181, 162), rgb(132, 120, 108));
 }
 .main .sticky-playlist-info {
   margin-bottom: 10px;
@@ -322,7 +377,7 @@ i {
   position: sticky;
   top: 0; /* Ở trên cùng */
   background-color: green; /* Màu nền bạn muốn */
-  z-index: 999; /* Đảm bảo ở trên các phần tử khác */
+  z-index: 10; /* Đảm bảo ở trên các phần tử khác */
   opacity: 1;
   height: 110px; /* Đặt chiều cao để phần tử xuất hiện */
   transition: opacity 1s ease;
@@ -346,25 +401,49 @@ i {
   padding: 0px 10px;
 }
 .playlist-info {
-  padding-top: 50px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.info-container {
+  padding-top: 25px;
 }
 .playlist-info .roboto-black {
   font-size: 60px;
-  color: #f1f1f1;
+  color: white;
 }
+
 .songs-in-playlist {
   display: flex;
   justify-content: space-between;
+  background: rgb(66, 60, 54);
+  position: relative;
 }
-.sticky-playlist-info .toggle-play-btn,
-.songs-in-playlist .toggle-play-btn {
+.toggle-play-btn {
   background-color: #1ed760;
   width: 56px;
   height: 56px;
   border-radius: 50%;
+  margin-left: 20px;
   display: flex;
   align-items: center;
   justify-content: center;
+  cursor: pointer;
+}
+.toggle-play-btn:hover {
+  transform: scale(1.1);
+  background-color: #51e484;
+}
+.play-playlist-btn .icon-pause {
+  display: none;
+}
+
+.play-playlist-btn.playing .icon-pause {
+  display: block;
+}
+
+.play-playlist-btn.playing .icon-play {
+  display: none;
 }
 .songs-controller {
   display: flex;
@@ -396,33 +475,37 @@ i {
   padding: 8px;
   font-size: 16px;
 }
-.dropdown-btn #list {
-  display: none;
-}
+
 .song-display-content {
   display: none;
   position: absolute;
-  background-color: gray;
+  right: 10px;
+  background-color: #0f0f0f;
   min-width: 160px;
   box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
   border-radius: 5px;
   z-index: 1;
+  top: 60%;
 }
+
 .song-display-content ul {
   list-style-type: none;
-  padding: 0;
+  /* padding: 0; */
 }
+
 .song-display-content li {
   padding: 12px 16px;
   text-decoration: none;
-  color: black;
+  color: white;
   display: block;
   cursor: pointer;
 }
+
 .song-display-content li:hover {
-  background-color: antiquewhite;
+  background-color: #3e3e3e;
   border-radius: 5px;
 }
+
 .dropdown:hover .song-display-content {
   display: block;
 }
@@ -430,11 +513,13 @@ i {
   width: 100%;
   border-spacing: 0;
 }
-.track-list .song-info .title {
+.track-list .song-info .title,
+.recommend-list .title {
   display: flex;
   margin: 5px 0px;
 }
-.track-list .song-info .thumb {
+.track-list .song-info .thumb,
+.recommend-list .song-info .thumb {
   width: 50px;
   height: 50px;
 }
@@ -447,7 +532,6 @@ i {
 }
 .track-list table {
   width: 100%;
-  margin-top: 20px;
   border-spacing: 0;
   padding: 0px 10px;
 }
@@ -479,7 +563,7 @@ td {
   height: 105px;
   margin-top: 10px;
   display: flex;
-  background-color: #17202a;
+  background-color: #121212;
   position: relative;
   color: white;
   align-items: center;
@@ -536,7 +620,7 @@ td {
   height: 5px;
   margin: 0px 10px;
   outline: none;
-  background: linear-gradient(90deg, rgb(64, 64, 64) 60%, rgb(64, 64, 64) 60%);
+  background: linear-gradient(90deg, rgb(256, 256, 256) 0%, rgb(64, 64, 64) 0%);
   opacity: 0.7;
   -webkit-transition: 0.2s;
   transition: opacity 0.2s;
@@ -545,13 +629,7 @@ td {
   margin-bottom: 10px;
   cursor: pointer;
 }
-#myRange:hover {
-  background: linear-gradient(
-    90deg,
-    rgb(117, 252, 117),
-    rgb(214, 214, 214)
-  ); /* Màu khi hover */
-}
+
 .slider:hover::-webkit-slider-thumb {
   -webkit-appearance: none;
   appearance: none;
@@ -566,7 +644,20 @@ td {
   -webkit-appearance: none;
   appearance: none;
 }
-.seek-bg {
+/* CSS cho seekbar trong trạng thái paused */
+#myRange {
+  background: linear-gradient(90deg, rgb(117, 252, 117) 0%, rgb(64, 64, 64) 0%);
+}
+#myRange:hover {
+  background: linear-gradient(
+    90deg,
+    rgb(117, 252, 117) 0%,
+    rgb(64, 64, 64) 100%
+  );
+}
+/* CSS mặc định cho seekbar khi hover */
+
+/* .seek-bg {
   width: 60vw;
   max-width: 500px;
   background-color: gray;
@@ -596,23 +687,16 @@ td {
   height: 15px;
   background-color: #fff;
   border-radius: 50%;
-  top: 50%; /* Vị trí ở giữa chiều cao */
+  top: 50%; /* Vị trí ở giữa chiều cao 
   left: 0%;
   transform: translate(-50%, -50%);
   cursor: pointer;
 }
 .seek-bg:hover #seek-bar {
   background-color: #1ed760;
-}
-/* Link làm thanh trượt này
-https://stackoverflow.com/questions/18389224/how-to-style-html5-range-input-to-have-different-color-before-and-after-slider */
-/* .progress:hover::-webkit-slider-thumb {
-  width: 15px;
-  height: 15px;
-  background: green;
-  border-radius: 50%;
-  display: block;
-} */
+} 
+*/
+
 .player .icon-play {
   transition: transform 0.1s ease-in-out;
 }
@@ -671,11 +755,125 @@ https://stackoverflow.com/questions/18389224/how-to-style-html5-range-input-to-h
   justify-content: center; /* Căn giữa các phần tử trong từng `div` */
 }
 .volume-control {
-  display: flex;
-  align-items: center;
-  margin-left: 10px;
+  margin-left: 20px;
+}
+#volume-icon {
+  width: 30px;
+}
+.volume {
+  -webkit-appearance: none;
+  width: 100%;
+  height: 5px;
+  margin: 0px 10px;
+  outline: none;
+  background: linear-gradient(90deg, rgb(64, 64, 64) 60%, rgb(64, 64, 64) 60%);
+  opacity: 0.7;
+  -webkit-transition: 0.2s;
+  transition: opacity 0.2s;
+  border-radius: 12px;
+  box-shadow: 0px 1px 10px 1px black;
+  margin-bottom: 10px;
+  cursor: pointer;
+}
+
+.volume:hover::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 15px;
+  height: 15px;
+  background-color: #fff;
+  border-radius: 50%;
+  cursor: pointer;
+  opacity: 1;
+}
+.volume::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
 }
 
 .volume {
   margin-left: 10px; /* Tạo khoảng cách giữa icon và thanh volume */
+}
+.search-button {
+  color: white;
+}
+.icon-text {
+  color: #fff;
+}
+.lib-option i {
+  color: #fff;
+}
+.option-title {
+  font-size: 12px;
+  font-weight: 600;
+}
+.recommend-title {
+  padding-top: 20px;
+  padding-left: 50px;
+  width: 100%;
+}
+.recommend-list table {
+  width: 100%;
+  border-spacing: 0;
+  padding-left: 50px;
+  padding-right: 10px;
+}
+.add-btn {
+  border: solid 1px #c7c7c7;
+  border-radius: 50px;
+  padding: 5px 15px;
+  background-color: transparent;
+  font-size: 16px;
+  opacity: 0.8;
+  cursor: pointer;
+}
+.add-btn:hover {
+  transform: scale(1.1);
+  opacity: 1;
+}
+.song-row:hover {
+  background-color: rgb(58, 57, 57);
+}
+.main-container {
+  background-image: linear-gradient(rgb(66, 60, 54), rgb(18, 18, 18));
+}
+
+.option-list {
+  display: none;
+
+  position: absolute;
+  text-decoration: none;
+  z-index: 999999;
+  list-style-type: none;
+  border-radius: 5px;
+  min-width: 250px;
+  background: #0f0f0f;
+}
+.option-list li {
+  padding: 0;
+  color: white;
+  font-weight: 400;
+}
+.option-list li i {
+  font-size: 16px;
+}
+.option-list hr {
+  width: 95%;
+  margin-left: 2.5%;
+}
+.playlist-option:hover .option-list {
+  display: block;
+}
+.playlist-option {
+  margin-left: 20px;
+  cursor: pointer;
+  opacity: 0.7;
+  color: white;
+}
+.playlist-option:hover {
+  opacity: 1;
+}
+.option-list li:hover {
+  background-color: #3e3e3e;
+  border-radius: 5px;
 }

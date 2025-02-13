@@ -1,0 +1,137 @@
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+}
+.container {
+  width: 90%;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+.main {
+  background-color: #121212;
+}
+/* Header Tabs */
+.home-header {
+  display: flex;
+  gap: 10px;
+  margin: 20px 0;
+}
+
+.tab {
+  padding: 10px 20px;
+  border: none;
+  background: #1db954;
+  color: white;
+  cursor: pointer;
+  border-radius: 20px;
+  font-size: 14px;
+}
+
+.tab.active {
+  background: #ffffff;
+  color: #1db954;
+}
+
+/* Playlist Categories */
+.playlist-categories {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 15px;
+  margin: 20px 0;
+}
+.thumb {
+  width: 60px;
+  height: 60px;
+  border-radius: 5px;
+  background-size: cover;
+  margin-right: 10px;
+}
+.home-playlist {
+  background-color: #2a2a2a;
+  border-radius: 10px;
+  cursor: pointer;
+  font-size: 14px;
+  flex: 1 1 230px;
+  display: flex;
+  align-items: center;
+  color: white;
+  font-size: 16px;
+  font-weight: 700;
+}
+
+/* Section */
+.section {
+  margin: 30px 0;
+}
+
+.section h2 {
+  margin-bottom: 20px;
+  font-size: 20px;
+  font-weight: bold;
+  color: #fff;
+}
+
+/* Daily Mix Section */
+.daily-mix-1 {
+  display: flex;
+  gap: 35px;
+  overflow-x: auto;
+  padding: 5px 0px;
+}
+
+.daily-mix-1 .mix-item {
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.daily-mix-1 .mix-item .thumb {
+  border-radius: 10px;
+  width: 200px;
+  height: 200px;
+  margin-bottom: 10px;
+}
+
+.daily-mix-1 .mix-item p {
+  font-size: 20px;
+  color: #fff;
+  font-weight: 500;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  width: 200px;
+}
+/* Daily Mix Section */
+.daily-mix-2 {
+  display: flex;
+  gap: 35px;
+  overflow-x: auto;
+  padding: 5px 0px;
+}
+
+.daily-mix-2 .mix-item {
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.daily-mix-2 .mix-item .thumb {
+  border-radius: 10px;
+  width: 200px;
+  height: 200px;
+  margin-bottom: 10px;
+}
+.daily-mix-2 .mix-item p {
+  font-size: 20px;
+  color: #fff;
+  font-weight: 500;
+  white-space: nowrap; /* Không cho nội dung xuống dòng */
+  overflow: hidden; /* Ẩn nội dung tràn ra ngoài */
+  text-overflow: ellipsis; /* Thêm dấu "..." nếu nội dung bị cắt */
+  width: 200px; /* Đặt chiều rộng để giới hạn */
+}

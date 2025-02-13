@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Spotify Auth Example</title>
+    <style>
+      body {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        background-color: #1db954;
+        color: white;
+        font-family: Arial, sans-serif;
+        text-align: center;
+      }
+
+      #login-btn {
+        background-color: white;
+        color: #1db954;
+        border: none;
+        padding: 15px 30px;
+        font-size: 18px;
+        font-weight: bold;
+        border-radius: 50px;
+        cursor: pointer;
+        transition: background-color 0.3s;
+      }
+
+      #login-btn:hover {
+        background-color: #f1f1f1;
+      }
+
+      img {
+        width: 150px;
+        margin-bottom: 20px;
+      }
+    </style>
+  </head>
+  <body>
+    <img
+      src="https://upload.wikimedia.org/wikipedia/commons/2/26/Spotify_logo_with_text.svg"
+      alt="Spotify Logo"
+    />
+    <h1>Spotify Implicit Grant Flow</h1>
+    <button id="login-btn">Login to Spotify</button>
+    <div id="user-info"></div>
+
+    <script>
+      const clientId = "8faa7d71093543769378d035b9216c65";
+      const redirectUri = "http://127.0.0.1:5500/index.html";
+      const authEndpoint = "https://accounts.spotify.com/authorize";
+      const scopes = [
+        "ugc-image-upload",
+        "user-read-playback-state",
+        "user-modify-playback-state",
+        "user-read-currently-playing",
+        "app-remote-control",
+        "streaming",
+        "playlist-read-private",
+        "playlist-read-collaborative",
+        "playlist-modify-private",
+        "playlist-modify-public",
+        "user-follow-modify",
+        "user-follow-read",
+        "user-read-playback-position",
+        "user-top-read",
+        "user-read-recently-played",
+        "user-library-modify",
+        "user-library-read",
+        "user-read-email",
+        "user-read-private",
+      ];
+
+      document
+        .getElementById("login-btn")
+        .addEventListener("click", function () {
+          window.location = `${authEndpoint}?client_id=${clientId}&redirect_uri=${redirectUri}&scope=${scopes.join(
+            "%20"
+          )}&response_type=token`;
+        });
+    </script>
+  </body>
+</html>

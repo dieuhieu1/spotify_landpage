@@ -1,0 +1,125 @@
+/* General Styles */
+body {
+  background-color: #121212;
+  color: white;
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+.container {
+  width: 90%;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* Header Tabs */
+.home-header {
+  display: flex;
+  gap: 10px;
+  margin: 20px 0;
+}
+
+.tab {
+  padding: 10px 20px;
+  border: none;
+  background: #1db954;
+  color: white;
+  cursor: pointer;
+  border-radius: 20px;
+  font-size: 14px;
+}
+
+.tab.active {
+  background: #ffffff;
+  color: #1db954;
+}
+
+/* Playlist Categories */
+.playlist-categories {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 15px;
+  margin: 20px 0;
+}
+.thumb {
+  width: 60px;
+  height: 60px;
+  border-radius: 5px;
+  background-size: cover;
+  margin-right: 10px;
+}
+.home-playlist {
+  background: #282828;
+  padding: 10px 20px;
+  border-radius: 10px;
+  cursor: pointer;
+  font-size: 14px;
+  text-align: center;
+  flex: 1 1 230px;
+  display: flex;
+  align-items: center;
+}
+
+/* Section */
+.section {
+  margin: 30px 0;
+}
+
+.section h2 {
+  margin-bottom: 20px;
+  font-size: 20px;
+  font-weight: bold;
+}
+
+/* Daily Mix Section */
+.daily-mix-1 {
+  display: flex;
+  gap: 10px;
+  /* align-items: center; */
+  justify-content: center;
+  overflow-x: auto;
+  padding: 5px;
+}
+
+.daily-mix-1 .mix-item {
+  text-align: center;
+}
+
+.daily-mix-1 .mix-item img {
+  border-radius: 10px;
+  width: 200px;
+  height: 200px;
+  margin-bottom: 10px;
+}
+
+.daily-mix-1 .mix-item p {
+  font-size: 14px;
+  color: #ccc;
+}
+
+/* Daily Mix Section */
+.daily-mix-2 {
+  display: flex;
+  gap: 10px;
+  /* align-items: center; */
+  justify-content: center;
+  overflow-x: auto;
+  padding: 5px;
+}
+
+.daily-mix-2 .mix-item {
+  text-align: center;
+}
+
+.daily-mix-2 .mix-item img {
+  border-radius: 10px;
+  width: 200px;
+  height: 200px;
+  margin-bottom: 10px;
+}
+
+.daily-mix-2 .mix-item p {
+  font-size: 14px;
+  color: #ccc;
+}
