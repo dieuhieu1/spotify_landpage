@@ -7,7 +7,6 @@ This project is a Spotify Clone built using **HTML, CSS, and JavaScript**, which
 - **Spotify Authentication:** Users authenticate using their Spotify account.
 - **Fetch Playlists:** Display user playlists dynamically.
 - **Play Music:** Play songs directly from Spotify.
-- **Responsive UI:** Looks good on desktop and mobile.
 
 ## Prerequisites
 Before running the project, ensure you have:
@@ -51,13 +50,11 @@ Before running the project, ensure you have:
 ## Future Enhancements
 - Implement Search Functionality
 - Add Volume and Playback Controls
-- Improve UI/UX with animations
+- Improve UI/UX and Responsive
 
 ## Troubleshooting
 - **Invalid Token?** Ensure your Spotify App's Redirect URI matches.
+- ** Make sure your Spotify Account have premium to adapt the policy API of Spotify :(((
 - **No Sound?** Make sure a device is active on Spotify.
-- **CORS Issues?** Use a local server instead of `file://`
 
-## License
-MIT License. Feel free to modify and enhance!
 
