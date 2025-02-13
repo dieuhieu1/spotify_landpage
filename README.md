@@ -17,8 +17,8 @@ Before running the project, ensure you have:
 ## Setting Up Spotify API
 1. Go to [Spotify Developer Dashboard](https://developer.spotify.com/dashboard/)
 2. Click **Create an App**
-3. Set **Redirect URI** to `http://localhost:5500`
-4. Copy **Client ID** and use it in the `script.js`
+3. Set **Redirect URI** to `http://127.0.0.1:5500/index.html`
+4. Copy **Client ID** and use it in the `login.html`
 
 ## Project Structure
 ```
@@ -49,7 +49,6 @@ Before running the project, ensure you have:
 
 ## Future Enhancements
 - Implement Search Functionality
-- Add Volume and Playback Controls
 - Improve UI/UX and Responsive
 
 ## Troubleshooting
