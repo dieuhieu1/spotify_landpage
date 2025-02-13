@@ -43,10 +43,12 @@ Before running the project, ensure you have:
 3. **Fetch Data** → Playlists & music are loaded dynamically.
 
 ## API Endpoints Used
-- **Authorization:** `https://accounts.spotify.com/authorize`
+- **Get User Data :** `https://api.spotify.com/v1/me`
 - **Get User Playlists:** `https://api.spotify.com/v1/me/playlists`
-- **Play Track:** `https://api.spotify.com/v1/me/player/play`
-
+- **Get Playlist Data:** `https://api.spotify.com/v1/me/playlistsId`
+- **Get Playlist Items: ** `https://api.spotify.com/v1/playlists/playlistId/tracks`
+- **Play Track:** `https://api.spotify.com/v1/me/player/play?device_id=device_id`
+- Some More to get the data for UI.
 ## Future Enhancements
 - Implement Search Functionality
 - Improve UI/UX and Responsive
