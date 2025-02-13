@@ -1,4 +1,4 @@
-Spotify HomePage with some features - README
+**Spotify Clone - README**
 
 Overview
 
